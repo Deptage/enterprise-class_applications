@@ -1,2 +1,22 @@
 # enterprise-class_applications
 Repository for the Technologies for enterprise-class applications class
+
+# Calendar
+
+| NUMBER | Topic                                             | Date  |
+|--------|--------------------------------------------------|-------|
+| 0      | Zajęcia organizacyjne                           | 07.03 |
+| 0     | Konfiguracja serwera Payara i środowiska IntelliJ IDEA | 07.03 |
+| 1      | Serwlety Java, JSP, JSTL                        | 14.03 |
+| 2      | Jakarta Faces (JSF)                             | 21.03 |
+| 3      | JSF + JPA + CDI + BV                            | 28.03 |
+| 4      | Message-Driven Beans                            | 04.04 |
+| 5      | Spring                                         | 11.04 |
+| 6      | ASP.NET MVC + Entity Framework (Code First)    | 25.04 |
+| 7      | ASP.NET Web API + Ajax                         | 09.05 |
+| 8      | Web Services (REST): ASP.NET Web API           | 16.05 |
+| 9      | Web Services (REST): JAX-RS                    | 23.05 |
+| 10     | React                                          | 30.05 |
+| 11     | Aplikacja SPA: Angular + .NET Core Web API     | 06.06 |
+| 12      | Prezentacja projektów. Nadrabianie zaległości. | 13.06 |
+
