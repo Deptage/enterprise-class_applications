@@ -16,7 +16,7 @@
     <title>Yesterday</title>
     <style type="text/css">
         body { background: ${bean.backgroundColor};
-            color: ${bean.foregroundColor} }
+            color: ${bean.foregroundColor}}
     </style>
 </head>
 <body>
@@ -41,13 +41,18 @@ Something wrong, now I long for yesterday.<br/>
     Released: <fmt:formatDate value="${releaseDate}" type="date" dateStyle="full"/>
 </p>
 <c:if test="${!empty members}">
-    <table border>
-        <tr><th>The Beatles</th></tr>
+    <table style="border: ${bean.borderStyle};">
+        <tr>
+            <th style="border: ${bean.borderStyle};">The Beatles</th>
+        </tr>
         <c:forEach var="member" items="${members}">
-            <tr><td>${member}</td></tr>
+            <tr>
+                <td style="border: ${bean.borderStyle};">${member}</td>
+            </tr>
         </c:forEach>
     </table>
 </c:if>
+
 
 <a href="yesterday.html">Back</a>
 </body>
