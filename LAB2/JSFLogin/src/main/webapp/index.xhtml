@@ -11,7 +11,12 @@
     <h:form>
         <h:panelGrid columns="2">
             <h:outputLabel for="usernameField" value="Username"></h:outputLabel>
-            <h:inputText id="usernameField"></h:inputText>
+            <h:inputText id="usernameField" value="#{loginBean.username}"></h:inputText>
+            <h:outputLabel for="passwordField" value="Password"></h:outputLabel>
+            <h:inputSecret id="passwordField" value="#{loginBean.password}"></h:inputSecret>
+            <h:panelGroup/>
+<!--            jesli nie chcę by był pod polami do wpisywania, to usunąć panelGroup-->
+            <h:commandButton id="loginButton" value="Log in" action="#{loginBean.login()}"></h:commandButton>
         </h:panelGrid>
     </h:form>
 </h:body>
