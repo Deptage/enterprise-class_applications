@@ -22,7 +22,9 @@
 <!--            jesli nie chcę by był pod polami do wpisywania, to usunąć panelGroup-->
             <h:commandButton id="loginButton" value="#{AppMessages['label.login']}" binding="#{loginBean.loginButton}" action="#{loginBean.login()}" disabled="true"></h:commandButton>
         </h:panelGrid>
-        <h:selectBooleanCheckbox id="acceptCheckBox" binding="#{loginBean.acceptCheckbox}" valueChangeListener="#{loginBean.activateButton}" onchange="submit()" immediate="true"/>
+        <h:selectBooleanCheckbox id="acceptCheckBox" binding="#{loginBean.acceptCheckbox}" valueChangeListener="#{loginBean.activateButton}" immediate="true">
+            <f:ajax execute="@this" render="loginButton"/>
+        </h:selectBooleanCheckbox>
         <h:outputText value="#{AppMessages['label.tos']}"/>
     </h:form>
 </h:body>
