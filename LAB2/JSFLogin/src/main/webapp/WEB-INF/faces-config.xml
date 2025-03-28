@@ -6,6 +6,11 @@
     <application>
         <locale-config>
             <default-locale>en</default-locale>
+            <supported-locale>pl</supported-locale>
         </locale-config>
+        <resource-bundle>
+            <base-name>ApplicationMessages</base-name>
+            <var>AppMessages</var>
+        </resource-bundle>
     </application>
 </faces-config>
