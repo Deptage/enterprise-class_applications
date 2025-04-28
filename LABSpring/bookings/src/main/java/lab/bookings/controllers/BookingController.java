@@ -63,9 +63,9 @@ public class BookingController {
         return view;
     }
     @PostMapping("/delete")
-    public String delete(@RequestParam(required = true) Long id){
-        if(bookingRepository.findById(id).isPresent())
-            bookingRepository.deleteById(id);
+    public String delete(@RequestParam Long id) {
+        bookingRepository.findById(id)
+                .ifPresent(bookingRepository::delete);
         return "redirect:/bookings";
     }
 }

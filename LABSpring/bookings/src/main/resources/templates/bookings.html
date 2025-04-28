@@ -23,10 +23,11 @@
 </form>
 
 <form th:action="@{/bookings/delete}" method="post">
-    <input type="number" th:field="${booking.id}" />
-    <input type="submit" value="Delete a booking by id" />
-
+    <label>Booking ID to delete:</label>
+    <input type="number" name="id" required/>
+    <input type="submit" value="Delete booking by id"/>
 </form>
+
 
 <table border="1">
     <thead>
