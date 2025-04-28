@@ -11,6 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -60,5 +61,11 @@ public class BookingController {
             }
         }
         return view;
+    }
+    @PostMapping("/delete")
+    public String delete(@RequestParam(required = true) Long id){
+        if(bookingRepository.findById(id).isPresent())
+            bookingRepository.deleteById(id);
+        return "redirect:/bookings";
     }
 }
