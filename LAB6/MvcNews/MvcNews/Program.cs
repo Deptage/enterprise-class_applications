@@ -1,7 +1,14 @@
+using MvcNews.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<NewsDbContext>(options =>
+ options.UseSqlServer(builder.Configuration
+ .GetConnectionString("NewsDbContext")));
 
 var app = builder.Build();
 
