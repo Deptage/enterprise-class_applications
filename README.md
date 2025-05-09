@@ -5,8 +5,8 @@ Repository for the Technologies for enterprise-class applications class
 
 | NUMBER | Topic                                             | Date  | Done? | Approved? |
 |--------|--------------------------------------------------|-------|-------|-----------|
-| 0      | Zajęcia organizacyjne                           | 07.03 | [x]   | [ ]       |
-| 0      | Konfiguracja serwera Payara i środowiska IntelliJ IDEA | 07.03 | [x]   | [ ]       |
+| 0      | Zajęcia organizacyjne                           | 07.03 | [x]   |        |
+| 0      | Konfiguracja serwera Payara i środowiska IntelliJ IDEA | 07.03 | [x]   |        |
 | 1      | Serwlety Java, JSP, JSTL                        | 14.03 | [x]   | [x]       |
 | 2      | Jakarta Faces (JSF)                             | 21.03 | [x]   | [x]       |
 | 3      | JSF + JPA + CDI + BV                            | 28.03 | [ ]   | [ ]       |
