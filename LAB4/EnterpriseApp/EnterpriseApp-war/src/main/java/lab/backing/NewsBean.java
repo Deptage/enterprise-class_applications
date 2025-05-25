@@ -1,0 +1,43 @@
+package lab.backing;
+
+import jakarta.annotation.Resource;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.jms.JMSContext;
+import jakarta.jms.JMSException;
+import jakarta.jms.ObjectMessage;
+import lab.ejb.NewsItem;
+import lab.ejb.NewsItemFacadeLocal;
+
+import java.util.List;
+
+@RequestScoped
+@Named
+public class NewsBean {
+    @Inject
+    private NewsItemFacadeLocal facade;
+
+    @Inject
+    private JMSContext context;
+    @Resource(lookup="java:app/jms/NewsQueue")
+    private jakarta.jms.Queue queue;
+
+    void sendNewsItem(String heading, String body) {
+        try {
+            ObjectMessage message = context.createObjectMessage();
+            NewsItem e = new NewsItem();
+            e.setHeading(heading);
+            e.setBody(body);
+            message.setObject(e);
+            context.createProducer().send(queue, message);
+        } catch (JMSException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public List<NewsItem> getNewsItems()
+    {
+        return facade.getAllNewsItems();
+    }
+}
