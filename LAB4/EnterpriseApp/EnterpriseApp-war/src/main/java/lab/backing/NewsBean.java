@@ -40,4 +40,30 @@ public class NewsBean {
     {
         return facade.getAllNewsItems();
     }
+
+    private String headingText;
+    private String bodyText;
+
+    public String getHeadingText() {
+        return headingText;
+    }
+
+    public void setHeadingText(String headingText) {
+        this.headingText = headingText;
+    }
+
+    public String getBodyText() {
+        return bodyText;
+    }
+
+    public void setBodyText(String bodyText) {
+        this.bodyText = bodyText;
+    }
+
+    public String submitNews()
+    {
+        sendNewsItem(getHeadingText(), getBodyText());
+        return null;
+    }
+
 }
