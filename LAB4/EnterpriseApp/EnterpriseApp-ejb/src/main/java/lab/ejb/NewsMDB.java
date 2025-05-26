@@ -2,10 +2,7 @@ package lab.ejb;
 
 import jakarta.ejb.ActivationConfigProperty;
 import jakarta.ejb.MessageDriven;
-import jakarta.jms.JMSDestinationDefinition;
-import jakarta.jms.JMSException;
-import jakarta.jms.Message;
-import jakarta.jms.ObjectMessage;
+import jakarta.jms.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
@@ -25,11 +22,16 @@ public class NewsMDB implements jakarta.jms.MessageListener {
 
     @Override
     public void onMessage(Message message) {
-        ObjectMessage msg = null;
+        TextMessage msg = null;
         try {
-            if (message instanceof ObjectMessage) {
-                msg = (ObjectMessage) message;
-                NewsItem e = (NewsItem) msg.getObject();
+            if (message instanceof TextMessage) {
+                msg = (TextMessage) message;
+                NewsItem e = new NewsItem();
+                String[] texts = msg.getText().split("\\|",2);
+                String heading = texts[0];
+                String body = texts[1];
+                e.setHeading(heading);
+                e.setBody(body);
                 em.persist(e);
             }
         } catch (JMSException e) {

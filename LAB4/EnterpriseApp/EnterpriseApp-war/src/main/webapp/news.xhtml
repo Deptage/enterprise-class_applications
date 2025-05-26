@@ -16,7 +16,7 @@
         <h:outputText value="Body input" for="bodyInputText"/>
         <h:inputText id="bodyInputText" value="#{newsBean.bodyText}"></h:inputText>
 
-        <h:commandButton id="submitButton" value="Wyślij" action="" />
+        <h:commandButton id="submitButton" value="Wyślij" action="#{newsBean.submitNews()}" />
 
         <h:dataTable value="#{newsBean.newsItems}" var="item"
                      border="1">
