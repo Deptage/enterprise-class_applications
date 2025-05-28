@@ -5,7 +5,6 @@ I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApi
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApiAjax.runtimeconfig.json
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApiAjax.dll
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApiAjax.pdb
-I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.csproj.AssemblyReference.cache
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.GeneratedMSBuildEditorConfig.editorconfig
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.AssemblyInfoInputs.cache
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.AssemblyInfo.cs
@@ -19,3 +18,9 @@ I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\refint
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.pdb
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.genruntimeconfig.cache
 I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\ref\WebApiAjax.dll
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApiAjax.staticwebassets.runtime.json
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\bin\Debug\net6.0\WebApiAjax.staticwebassets.endpoints.json
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\WebApiAjax.sourcelink.json
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\staticwebassets.build.json.cache
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+I:\studia\SEMESTR8\ENTERPRISE\LAB7\WebApiAjax\WebApiAjax\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
