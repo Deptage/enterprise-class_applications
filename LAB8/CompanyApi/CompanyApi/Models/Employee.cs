@@ -38,6 +38,6 @@ public partial class Employee
     public virtual ICollection<Employee> Subordinate { get; set; } = new List<Employee>();
 
     [ForeignKey("ManagerId")]
-    [InverseProperty("InverseManager")]
+    [InverseProperty("Subordinate")]
     public virtual Employee? Manager { get; set; }
 }
