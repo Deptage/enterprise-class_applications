@@ -15,6 +15,19 @@ namespace CompanyApi.Controllers
     {
         private readonly CompanyDbContext _context;
 
+        private static DepartmentDTO DepartmentToDTO(Department department) =>
+        new DepartmentDTO
+        {
+            DepartmentId = department.DepartmentId,
+            Name = department.Name
+        };
+        private static Department DTOToDepartment(DepartmentDTO departmentDTO) =>
+        new Department
+        {
+            DepartmentId = departmentDTO.DepartmentId,
+            Name = departmentDTO.Name
+        };
+
         public DepartmentsController(CompanyDbContext context)
         {
             _context = context;
@@ -22,14 +35,14 @@ namespace CompanyApi.Controllers
 
         // GET: api/Departments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Department>>> GetDepartments()
+        public async Task<ActionResult<IEnumerable<DepartmentDTO>>> GetDepartments()
         {
-            return await _context.Departments.ToListAsync();
+            return await _context.Departments.Select(e=> DepartmentToDTO(e)).ToListAsync();
         }
 
         // GET: api/Departments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Department>> GetDepartment(int id)
+        public async Task<ActionResult<DepartmentDTO>> GetDepartment(int id)
         {
             var department = await _context.Departments.FindAsync(id);
 
@@ -38,20 +51,20 @@ namespace CompanyApi.Controllers
                 return NotFound();
             }
 
-            return department;
+            return DepartmentToDTO(department);
         }
 
         // PUT: api/Departments/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutDepartment(int id, Department department)
+        public async Task<IActionResult> PutDepartment(int id, DepartmentDTO departmentDTO)
         {
-            if (id != department.DepartmentId)
+            if (id != departmentDTO.DepartmentId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(department).State = EntityState.Modified;
+            _context.Entry(DTOToDepartment(departmentDTO)).State = EntityState.Modified;
 
             try
             {
@@ -75,17 +88,17 @@ namespace CompanyApi.Controllers
         // POST: api/Departments
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Department>> PostDepartment(Department department)
+        public async Task<ActionResult<DepartmentDTO>> PostDepartment(DepartmentDTO departmentDTO)
         {
-            _context.Departments.Add(department);
+            _context.Departments.Add(DTOToDepartment(departmentDTO));
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDepartment", new { id = department.DepartmentId }, department);
+            return CreatedAtAction("GetDepartment", new { id = departmentDTO.DepartmentId }, departmentDTO);
         }
 
         // DELETE: api/Departments/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDepartment(int id)
+        public async Task<ActionResult<DepartmentDTO>> DeleteDepartment(int id)
         {
             var department = await _context.Departments.FindAsync(id);
             if (department == null)
@@ -96,7 +109,7 @@ namespace CompanyApi.Controllers
             _context.Departments.Remove(department);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return DepartmentToDTO(department);
         }
 
         private bool DepartmentExists(int id)
