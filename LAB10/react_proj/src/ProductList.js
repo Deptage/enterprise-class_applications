@@ -2,27 +2,21 @@ import React, { useEffect, useState } from 'react';
 import ProductItem from './ProductItem';
 import axios from 'axios';
 
-const ProductList = ({}) =>{
-    const [products, setProducts] =useState([]);
+const ProductList = ({products}) =>{
+    const [filter, setFilter] =useState('')
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const response = await fetch('https://dummyjson.com/products');
-            if (!response.ok) {
-                throw new Error('Failed to fetch products');
-            }
-            const data = await response.json();
-            setProducts(data.products);
-        };
-
-        fetchProducts();
-    }, []);
+    const onFilterChange = (event) => {
+        setFilter(event.target.value);
+    }
 
     return (
         <div>
             <h1>List of Products</h1>
+            <label>Filter by product title
+                <input type="text" value={filter} onChange={onFilterChange}/>
+            </label>
             <ul>
-                {products.map(product => (
+                {products.filter(product => product.title.includes(filter)).map(product => (
                     <ProductItem
                         key={product.id}
                         id={product.id}

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 
 const ProductItem = ({id, title, brand}) =>{
     return (
         <li>
-            {title} ({brand})
+            <Link to={`/details/${id}`}>{title}</Link> ({brand})
         </li>
     );
 }
