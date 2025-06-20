@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import ProductItem from './ProductItem';
+import axios from 'axios';
 
 const ProductList = ({}) =>{
     const [products, setProducts] =useState([]);
-        useEffect(() => {
-        setProducts([
-            {id: 1, title: "iPhone 14", brand: "Apple"},
-            {id: 2, title: "iPad Air", brand: "Apple"},
-            {id: 3, title: "Galaxy A51", brand: "Samsung"}
-        ]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const response = await fetch('https://dummyjson.com/products');
+            if (!response.ok) {
+                throw new Error('Failed to fetch products');
+            }
+            const data = await response.json();
+            setProducts(data.products);
+        };
+
+        fetchProducts();
     }, []);
 
     return (
