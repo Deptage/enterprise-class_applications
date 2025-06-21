@@ -18,15 +18,16 @@ public class ComplaintService {
     @Inject
     private ComplaintRepository repository;
 
+    @Inject
+    private ModelMapper mapper;
+
     @Transactional
     public void create(ComplaintDTO dto) {
-        ModelMapper mapper = new ModelMapper();
         repository.create(mapper.map(dto, Complaint.class));
     }
 
     @Transactional
     public void edit(ComplaintDTO dto) {
-        ModelMapper mapper = new ModelMapper();
         Complaint entity = mapper.map(dto, Complaint.class);
 
         Complaint existingComplaint = repository.find(entity.getId());
@@ -38,19 +39,16 @@ public class ComplaintService {
     @Transactional
     public void remove(ComplaintDTO dto) {
         if (dto != null) {
-            ModelMapper mapper = new ModelMapper();
             repository.remove(mapper.map(dto, Complaint.class));
         }
     }
 
     public ComplaintDTO find(long id) {
-        ModelMapper mapper = new ModelMapper();
         return mapper.map(repository.find(id), ComplaintDTO.class);
     }
 
-    public List<ComplaintDTO> findAll() {
-        ModelMapper mapper = new ModelMapper();
-        List<Complaint> entityList = repository.findAll();
+    public List<ComplaintDTO> findAll(String status) {
+        List<Complaint> entityList = repository.findAll(status);
         Type listType =
                 new TypeToken<List<ComplaintDTO>>() {}.getType();
         List<ComplaintDTO> dtoList =

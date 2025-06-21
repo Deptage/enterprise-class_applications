@@ -8,6 +8,9 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "complaint")
+@NamedQuery(name = "Complaint.findByStatus", query =
+        "SELECT c FROM Complaint c WHERE c.status = :status"
+)
 public class Complaint {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

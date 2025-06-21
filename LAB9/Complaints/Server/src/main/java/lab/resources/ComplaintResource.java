@@ -17,8 +17,8 @@ public class ComplaintResource {
 
     @GET
     @Produces(jakarta.ws.rs.core.MediaType.APPLICATION_JSON)
-    public List<ComplaintDTO> getAllComplaints() {
-        return service.findAll();
+    public List<ComplaintDTO> getAllComplaints(@QueryParam("status") String status) {
+        return service.findAll(status);
     }
 
     @GET
