@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<StudentContext>(opt => opt.UseInMemoryDatabase("StudentList"));
-
+builder.Services.AddCors();
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -25,6 +25,12 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
+
+app.UseCors( options =>
+    options.WithOrigins("http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+app.UseAuthorization();
 
 var summaries = new[]  
 {  
