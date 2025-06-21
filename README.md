@@ -15,7 +15,7 @@ Repository for the Technologies for enterprise-class applications class
 | 6      | ASP.NET MVC + Entity Framework (Code First)    | 25.04 | [x]   | [x]       |
 | 7      | ASP.NET Web API + Ajax                         | 09.05 | [x]   | [x]       |
 | 8      | Web Services (REST): ASP.NET Web API           | 16.05 | [x]   | [x]       |
-| 9      | Web Services (REST): JAX-RS                    | 23.05 | [ ]   | [ ]       |
+| 9      | Web Services (REST): JAX-RS                    | 23.05 | [x]   | [ ]       |
 | 10     | React                                          | 30.05 | [x]   | [ ]       |
 | 11     | Aplikacja SPA: Angular + .NET Core Web API     | 06.06 | [x]   | [ ]       |
 | -      | Prezentacja projektów. Nadrabianie zaległości. | 13.06 | [ ]   | [ ]       |
