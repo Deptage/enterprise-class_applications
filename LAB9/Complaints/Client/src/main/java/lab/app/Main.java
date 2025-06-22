@@ -42,6 +42,8 @@ public class Main {
         System.out.println("Changed the complaint status");
         System.out.println("\n");
 
+
+        //podpunkt 7d
         String allOpenComplaints = client.target("http://localhost:8080/Server-1.0-SNAPSHOT/" +
                         "api/complaints?status=open")
                 .request(MediaType.APPLICATION_JSON)
