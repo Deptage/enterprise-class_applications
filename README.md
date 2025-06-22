@@ -9,7 +9,7 @@ Repository for the Technologies for enterprise-class applications class
 | 0      | Konfiguracja serwera Payara i środowiska IntelliJ IDEA | 07.03 | [x]   |        |
 | 1      | Serwlety Java, JSP, JSTL                        | 14.03 | [x]   | [x]       |
 | 2      | Jakarta Faces (JSF)                             | 21.03 | [x]   | [x]       |
-| 3      | JSF + JPA + CDI + BV                            | 28.03 | [ ]   | [ ]       |
+| 3      | JSF + JPA + CDI + BV                            | 28.03 | [x]   | [ ]       |
 | 4      | Message-Driven Beans                            | 04.04 | [x]   | [x]       |
 | 5      | Spring                                         | 11.04 | [x]   | [x]       |
 | 6      | ASP.NET MVC + Entity Framework (Code First)    | 25.04 | [x]   | [x]       |
